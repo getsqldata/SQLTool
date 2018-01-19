@@ -39,6 +39,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -52,9 +54,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(41, 97);
+            this.button2.Location = new System.Drawing.Point(41, 95);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(115, 39);
+            this.button2.Size = new System.Drawing.Size(115, 41);
             this.button2.TabIndex = 1;
             this.button2.Text = "Backup SQL";
             this.button2.UseVisualStyleBackColor = true;
@@ -67,6 +69,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Connect";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label1
             // 
@@ -144,11 +147,30 @@
             this.textBox3.TabIndex = 9;
             this.textBox3.Visible = false;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(389, 239);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(204, 21);
+            this.comboBox1.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(295, 242);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Server list";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(686, 333);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -180,6 +202,8 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label4;
+        public System.Windows.Forms.ComboBox comboBox1;
     }
 }
 

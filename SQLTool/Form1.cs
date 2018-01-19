@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace SQLTool
 {
@@ -14,6 +15,8 @@ namespace SQLTool
     {
 
         static int visibleAuth; //check radiobutton
+
+        SQLTool.Klasy.Logic logic = new Klasy.Logic();
 
         public Form1()
         {
@@ -26,7 +29,7 @@ namespace SQLTool
             label3.Visible = true;
             textBox2.Visible = true;
             textBox3.Visible = true;
-            visibleAuth = 1;
+            visibleAuth = 1;           
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -39,6 +42,12 @@ namespace SQLTool
                 textBox3.Visible = false;
                 visibleAuth = 0;
             }      
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+          
+            logic.ConnectToSQL();
         }
     }
 }
