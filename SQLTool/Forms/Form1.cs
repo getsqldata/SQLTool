@@ -16,7 +16,7 @@ namespace SQLTool
 
         static int visibleAuth; //check radiobutton
         public static string nameServer;
-        public static string userName;
+        public static string userNameSQL;
         public static string passwordSQL;
         public static string connectionString;
 
@@ -49,13 +49,18 @@ namespace SQLTool
         private void button3_Click(object sender, EventArgs e)
         {
             nameServer = textBox1.Text;             
-            comboBox1.DataSource = logic.GetDatabase();  
+            //comboBox1.DataSource = logic.GetDatabase();  
             
             if(radioButton2.Checked)
             {
+                userNameSQL = textBox2.Text;
+                passwordSQL = textBox3.Text;
+                connectionString = "Data Source=" + Form1.nameServer + "; Initial Catalog=" + comboBox1.Text + ";User Id=" + userNameSQL + ";Password=" + passwordSQL +";Asynchronous Processing=true;";
+                //MessageBox.Show("testmesedżboxa");
 
-
-                MessageBox.Show("testmesedżboxa");
+            } else
+            {
+                connectionString = "Data Source=" + Form1.nameServer + "; Initial Catalog=" + comboBox1.Text + ";Trusted_Connection=True;";
 
             }
 
