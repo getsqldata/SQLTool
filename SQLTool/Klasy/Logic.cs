@@ -68,14 +68,7 @@ namespace SQLTool.Klasy
 
                 return SQLQuery;
         }
-
-
-        void ConnectionSql()
-        {
-
-
-
-        }
+      
 
 
     }

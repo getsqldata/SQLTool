@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SQLTool.Klasy;
 
 namespace SQLTool
 {
@@ -19,8 +20,12 @@ namespace SQLTool
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SQLTool.Klasy.Logic opendb = new Klasy.Logic();
-            
+
+            Logic logic = new Logic();
+            string querySql = richTextBox1.Text;            
+            dataGridView1.DataSource = logic.QuerySql(querySql);
+
+
         }
     }
 }
