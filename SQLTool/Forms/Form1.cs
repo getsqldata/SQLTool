@@ -49,7 +49,7 @@ namespace SQLTool
         private void button3_Click(object sender, EventArgs e)
         {
             nameServer = textBox1.Text;             
-            //comboBox1.DataSource = logic.GetDatabase();  
+            comboBox1.DataSource = logic.GetDatabase();  
             
             if(radioButton2.Checked)
             {
