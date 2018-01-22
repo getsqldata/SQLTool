@@ -14,9 +14,12 @@ namespace SQLTool.Klasy
 
         internal List<string> GetDatabase()
         {
-            
+
+            //string nameServer = Form1.nameServer;
             List<string> dbases = new List<string>(); //lists of databases in instance
-            string connectionString = "Data Source=MCEDRO-DELL\\SQLSRV; Integrated Security=True;";
+            //string connectionString = "Data Source=MCEDRO-DELL\\SQLSRV; Integrated Security=True;";
+            string connectionString = "Data Source=" + Form1.nameServer + "; Integrated Security=True;";
+
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();

@@ -15,7 +15,7 @@ namespace SQLTool
     {
 
         static int visibleAuth; //check radiobutton
-        static string nameServer { get; set; }
+        public static string nameServer;
         SQLTool.Klasy.Logic logic = new Klasy.Logic();
 
 
@@ -48,9 +48,7 @@ namespace SQLTool
 
         private void button3_Click(object sender, EventArgs e)
         {
-
-            nameServer = textBox1.Text;
-            
+            nameServer = textBox1.Text;                
             comboBox1.DataSource = logic.GetDatabase(); 
 
         }
