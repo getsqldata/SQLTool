@@ -12,9 +12,6 @@ namespace SQLTool.Klasy
     class Logic
     {
 
-
-
-
         internal List<string> GetDatabase()
         {
 
@@ -48,12 +45,17 @@ namespace SQLTool.Klasy
             {
                 MessageBox.Show("UPS - Check server name");
             }
-
-
-
-
             return dbases;
 
-        }        
+        }
+
+        void ConnectionSql()
+        {
+
+
+
+        }
+
+
     }
 }
