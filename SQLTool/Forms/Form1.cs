@@ -15,13 +15,13 @@ namespace SQLTool
     {
 
         static int visibleAuth; //check radiobutton
+        static string nameServer { get; set; }
         SQLTool.Klasy.Logic logic = new Klasy.Logic();
 
 
         public Form1()
         {
             InitializeComponent();
-            
         }       
       
 
@@ -49,6 +49,8 @@ namespace SQLTool
         private void button3_Click(object sender, EventArgs e)
         {
 
+            nameServer = textBox1.Text;
+            
             comboBox1.DataSource = logic.GetDatabase(); 
 
         }
@@ -61,6 +63,12 @@ namespace SQLTool
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Query QueryForm = new Query();
+            QueryForm.Show();
         }
     }
 }
