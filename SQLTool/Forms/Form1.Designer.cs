@@ -92,7 +92,6 @@
             this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Username";
-            this.label2.Visible = false;
             // 
             // label3
             // 
@@ -102,7 +101,6 @@
             this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Password";
-            this.label3.Visible = false;
             // 
             // radioButton1
             // 
@@ -141,17 +139,17 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(304, 89);
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(204, 20);
             this.textBox2.TabIndex = 9;
-            this.textBox2.Visible = false;
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(304, 124);
             this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(204, 20);
             this.textBox3.TabIndex = 9;
-            this.textBox3.Visible = false;
             // 
             // comboBox1
             // 

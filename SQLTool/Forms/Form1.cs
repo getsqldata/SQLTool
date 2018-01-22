@@ -31,10 +31,8 @@ namespace SQLTool
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            label2.Visible = true;
-            label3.Visible = true;
-            textBox2.Visible = true;
-            textBox3.Visible = true;
+            textBox2.ReadOnly = false;
+            textBox3.ReadOnly = false;
             visibleAuth = 1;           
         }
 
@@ -42,10 +40,8 @@ namespace SQLTool
         {
             if (visibleAuth==1)
             {
-                label2.Visible = false;
-                label3.Visible = false;
-                textBox2.Visible = false;
-                textBox3.Visible = false;
+                textBox2.ReadOnly = true;
+                textBox3.ReadOnly = true;
                 visibleAuth = 0;
             }      
         }
@@ -57,6 +53,7 @@ namespace SQLTool
             
             if(radioButton2.Checked)
             {
+
 
                 MessageBox.Show("testmesedżboxa");
 
