@@ -12,6 +12,9 @@ namespace SQLTool.Klasy
     class Logic
     {
 
+
+
+
         internal List<string> GetDatabase()
         {
 
