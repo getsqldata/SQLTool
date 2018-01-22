@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -48,6 +49,26 @@ namespace SQLTool.Klasy
             return dbases;
 
         }
+
+        public DataTable QuerySql(string query)
+        {
+            DataTable SQLQuery = new DataTable();
+
+            using (SqlConnection con = new SqlConnection(Form1.connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    con.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    SQLQuery.Load(reader);
+                }
+
+
+            }
+
+                return SQLQuery;
+        }
+
 
         void ConnectionSql()
         {
