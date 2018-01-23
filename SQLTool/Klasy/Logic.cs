@@ -19,7 +19,7 @@ namespace SQLTool.Klasy
             //string nameServer = Form1.nameServer;
             List<string> dbases = new List<string>(); //lists of databases in instance
             //string connectionString = "Data Source=MCEDRO-DELL\\SQLSRV; Integrated Security=True;";
-            string connectionString = "Data Source=" + Form1.nameServer + "; Integrated Security=True;";
+            string connectionString = "Data Source=" + Form1.nameServer + "; Integrated Security=True;Connection Timeout=5";
 
             try
             {
@@ -53,10 +53,15 @@ namespace SQLTool.Klasy
         public DataTable QuerySql(string query)
         {
             DataTable SQLQuery = new DataTable();
+            string test = Form1.connectionString;
+            //string connectionString2 = "Data Source=" + Form1.nameServer + "; Integrated Security=True;Connection Timeout=5";
 
-            using (SqlConnection con = new SqlConnection(Form1.connectionString))
+            //using (SqlConnection con = new SqlConnection(Form1.connectionString))
+            using (SqlConnection con = new SqlConnection())
+
+
             {
-                using (SqlCommand cmd = new SqlCommand())
+                using (SqlCommand cmd = new SqlCommand(query,con))
                 {
                     con.Open();
                     SqlDataReader reader = cmd.ExecuteReader();
@@ -65,10 +70,32 @@ namespace SQLTool.Klasy
 
 
             }
-
                 return SQLQuery;
         }
-      
+
+        public DataTable isLack(string sql)
+
+        {
+            DataTable isLack = new DataTable();
+
+            string connStringErp = "Data Source=" + Form1.nameServer + "; Integrated Security=True;Connection Timeout=5";
+
+            using (SqlConnection conErp = new SqlConnection("Data Source=MCEDRO-DELL\\SQLSRV; Integrated Security=True;"))
+            {
+                
+                using (SqlCommand cmdErp = new SqlCommand(sql, conErp))
+                {
+                    conErp.Open();
+
+                    SqlDataReader readerErp = cmdErp.ExecuteReader();
+
+                    isLack.Load(readerErp);                    
+                }
+            }
+            
+            return isLack;
+        }
+
 
 
     }

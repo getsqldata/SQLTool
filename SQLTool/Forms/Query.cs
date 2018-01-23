@@ -20,12 +20,9 @@ namespace SQLTool
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             Logic logic = new Logic();
             string querySql = richTextBox1.Text;            
-            dataGridView1.DataSource = logic.QuerySql(querySql);
-
-
+            dataGridView1.DataSource = logic.isLack(querySql);
         }
     }
 }

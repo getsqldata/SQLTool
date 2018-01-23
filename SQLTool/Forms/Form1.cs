@@ -51,18 +51,7 @@ namespace SQLTool
             nameServer = textBox1.Text;             
             comboBox1.DataSource = logic.GetDatabase();  
             
-            if(radioButton2.Checked)
-            {
-                userNameSQL = textBox2.Text;
-                passwordSQL = textBox3.Text;
-                connectionString = "Data Source=" + Form1.nameServer + "; Initial Catalog=" + comboBox1.Text + ";User Id=" + userNameSQL + ";Password=" + passwordSQL +";Asynchronous Processing=true;";
-                //MessageBox.Show("testmesedżboxa");
-
-            } else
-            {
-                connectionString = "Data Source=" + Form1.nameServer + "; Initial Catalog=" + comboBox1.Text + ";Trusted_Connection=True;";
-
-            }
+  
 
         }
 
@@ -78,6 +67,22 @@ namespace SQLTool
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+
+            if (radioButton2.Checked)
+            {
+                userNameSQL = textBox2.Text;
+                passwordSQL = textBox3.Text;
+                connectionString = "Data Source=" + Form1.nameServer + "; Initial Catalog=" + comboBox1.Text + ";User Id=" + userNameSQL + ";Password=" + passwordSQL + "; Connection Timeout = 30";
+                //MessageBox.Show("testmesedżboxa");
+
+            }
+            else
+            {
+                connectionString = "Data Source=" + Form1.nameServer + "; Initial Catalog=" + comboBox1.Text + ";Integrated Security=True; Connection Timeout = 30";
+
+            }
+
             Query QueryForm = new Query();
             QueryForm.Show();
         }
