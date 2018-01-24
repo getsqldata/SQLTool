@@ -48,35 +48,12 @@ namespace SQLTool.Klasy
             }
             return dbases;
 
-        }
+        }       
 
-        public DataTable QuerySql(string query)
-        {
-            DataTable SQLQuery = new DataTable();
-            string test = Form1.connectionString;
-            //string connectionString2 = "Data Source=" + Form1.nameServer + "; Integrated Security=True;Connection Timeout=5";
-
-            //using (SqlConnection con = new SqlConnection(Form1.connectionString))
-            using (SqlConnection con = new SqlConnection())
-
-
-            {
-                using (SqlCommand cmd = new SqlCommand(query,con))
-                {
-                    con.Open();
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    SQLQuery.Load(reader);
-                }
-
-
-            }
-                return SQLQuery;
-        }
-
-        public DataTable isLack(string sql)
+        public DataTable querySQL(string sql)
 
         {
-            DataTable isLack = new DataTable();
+            DataTable querySQL = new DataTable();
 
             //string connStringErp = "Data Source=" + Form1.nameServer + "; Integrated Security=True;";
             string connStringErp = Form1.connectionString;
@@ -89,11 +66,11 @@ namespace SQLTool.Klasy
 
                     SqlDataReader readerErp = cmdErp.ExecuteReader();
 
-                    isLack.Load(readerErp);                    
+                    querySQL.Load(readerErp);                    
                 }
             }
             
-            return isLack;
+            return querySQL;
         }
 
 

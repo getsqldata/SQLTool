@@ -24,12 +24,12 @@ namespace SQLTool
         {
             Logic logic = new Logic();
             string querySql = richTextBox1.Text;            
-            dataGridView1.DataSource = logic.isLack(querySql);
+            dataGridView1.DataSource = logic.querySQL(querySql);
         }
 
         private void Query_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("Kiedy to wyskoczy?");
+            button1.Text = button1.Text + " on "  + Form1.usingDatabase;
         }
     }
 }

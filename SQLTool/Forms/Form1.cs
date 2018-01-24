@@ -19,6 +19,7 @@ namespace SQLTool
         public static string userNameSQL;
         public static string passwordSQL;
         public static string connectionString;
+        public static string usingDatabase;
 
         SQLTool.Klasy.Logic logic = new Klasy.Logic();
 
@@ -88,6 +89,7 @@ namespace SQLTool
                 MessageBox.Show(connectionString);
             }
 
+            usingDatabase = comboBox1.Text;
             Query QueryForm = new Query();
             QueryForm.Show();
         }
