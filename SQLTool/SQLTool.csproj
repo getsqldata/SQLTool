@@ -55,6 +55,12 @@
     <Compile Include="Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\OptimaAddons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OptimaAddons.Designer.cs">
+      <DependentUpon>OptimaAddons.cs</DependentUpon>
+    </Compile>
     <Compile Include="Klasy\Logic.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,6 +72,9 @@
     </Compile>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OptimaAddons.resx">
+      <DependentUpon>OptimaAddons.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Query.resx">
       <DependentUpon>Query.cs</DependentUpon>

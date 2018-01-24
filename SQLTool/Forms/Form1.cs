@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace SQLTool
@@ -103,6 +104,19 @@ namespace SQLTool
 
             usingDatabase = comboBox1.Text;
             logic.backup();
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+            SQLTool.Forms.OptimaAddons optimaAddons = new Forms.OptimaAddons();
+            optimaAddons.Show();
+            var p = new Process();
+            p.StartInfo.FileName = "C:\\Windows\\system32\\cliconfg.exe";  // just for example, you can use yours.
+            p.Start();
+
+
 
         }
     }
