@@ -79,8 +79,9 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(396, 46);
             this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
+            this.button3.Text = "SQL Server Configuration Manager";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -99,7 +100,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(396, 46);
             this.button5.TabIndex = 4;
-            this.button5.Text = "button5";
+            this.button5.Text = "Reset \'Admin\' password";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // OptimaAddons
