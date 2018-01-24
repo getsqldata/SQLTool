@@ -80,7 +80,7 @@
             this.button3.Location = new System.Drawing.Point(53, 160);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(297, 41);
-            this.button3.TabIndex = 2;
+            this.button3.TabIndex = 7;
             this.button3.Text = "Connect";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -119,7 +119,7 @@
             this.radioButton1.Location = new System.Drawing.Point(53, 68);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(140, 17);
-            this.radioButton1.TabIndex = 7;
+            this.radioButton1.TabIndex = 3;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Windows Authentication";
             this.radioButton1.UseVisualStyleBackColor = true;
@@ -131,7 +131,7 @@
             this.radioButton2.Location = new System.Drawing.Point(199, 68);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(151, 17);
-            this.radioButton2.TabIndex = 8;
+            this.radioButton2.TabIndex = 4;
             this.radioButton2.Text = "SQL Server Authentication";
             this.radioButton2.UseVisualStyleBackColor = true;
             this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
@@ -142,7 +142,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(204, 20);
-            this.textBox2.TabIndex = 9;
+            this.textBox2.TabIndex = 5;
             // 
             // textBox3
             // 
@@ -151,7 +151,7 @@
             this.textBox3.PasswordChar = '*';
             this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(204, 20);
-            this.textBox3.TabIndex = 9;
+            this.textBox3.TabIndex = 6;
             // 
             // comboBox1
             // 
@@ -159,7 +159,7 @@
             this.comboBox1.Location = new System.Drawing.Point(146, 207);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(204, 21);
-            this.comboBox1.TabIndex = 10;
+            this.comboBox1.TabIndex = 8;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label4
@@ -226,7 +226,7 @@
             this.button6.Location = new System.Drawing.Point(53, 39);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(297, 23);
-            this.button6.TabIndex = 11;
+            this.button6.TabIndex = 2;
             this.button6.Text = "Check server name";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
@@ -237,7 +237,7 @@
             this.comboBox2.Location = new System.Drawing.Point(146, 14);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(201, 21);
-            this.comboBox2.TabIndex = 10;
+            this.comboBox2.TabIndex = 1;
             this.comboBox2.Text = "MCEDRO-DELL\\SQLSRV";
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
