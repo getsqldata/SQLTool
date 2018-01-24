@@ -12,7 +12,7 @@ namespace SQLTool.Klasy
 {
     class Logic
     {
-
+        #region GetDatabase in selected instance
         internal List<string> GetDatabase()
         {
 
@@ -41,15 +41,18 @@ namespace SQLTool.Klasy
                     }
 
                 }
-            } catch
+            }
+            catch
 
             {
                 MessageBox.Show("UPS - Check server name");
             }
             return dbases;
 
-        }       
+        }
+        #endregion
 
+        #region Logic for quering sql
         public DataTable querySQL(string sql)
 
         {
@@ -59,49 +62,42 @@ namespace SQLTool.Klasy
             string connStringErp = Form1.connectionString;
             using (SqlConnection conErp = new SqlConnection(connStringErp))
             {
-                
+
                 using (SqlCommand cmdErp = new SqlCommand(sql, conErp))
                 {
                     conErp.Open();
                     SqlDataReader readerErp = cmdErp.ExecuteReader();
-                    querySQL.Load(readerErp);                    
+                    querySQL.Load(readerErp);
                 }
             }
-            
+
             return querySQL;
         }
+        #endregion
 
-        internal List<DataRow> getInstance()
-        {
-            List<DataRow> serverInstance = new List<DataRow>();
-            SqlDataSourceEnumerator instance = SqlDataSourceEnumerator.Instance;
-            DataTable tblServerInstance = instance.GetDataSources();
-            List<DataRow> list = tblServerInstance.AsEnumerable().ToList();
-            return serverInstance;
-            
-        }
-
-        public void getInstanceName()
-
+        #region GetInstanceNames in local network
+        internal List<string> getInstance()
         {
             List<string> serverInstance = new List<string>();
             SqlDataSourceEnumerator instance = SqlDataSourceEnumerator.Instance;
             DataTable tblServerInstance = instance.GetDataSources();
-        }
+            List<DataRow> list = tblServerInstance.AsEnumerable().ToList();
 
-        private static void DisplayData(System.Data.DataTable table)
-        {
-
-            foreach (System.Data.DataRow row in table.Rows)
+            foreach (System.Data.DataRow row in tblServerInstance.Rows)
             {
-                foreach (System.Data.DataColumn col in table.Columns)
+                foreach (System.Data.DataColumn col in tblServerInstance.Columns)
                 {
-                    MessageBox.Show("{0} = {1}" +  col.ColumnName + row[col]);
+                    if (col.ColumnName == "ServerName")
+                    {
+                        serverInstance.Add(col.ColumnName.Replace("ServerName", "") + row[col]);
+                    }                    
                 }
-               
+
             }
+
+            return serverInstance;
+
         }
-
-
+        #endregion
     }
 }
