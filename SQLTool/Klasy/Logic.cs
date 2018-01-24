@@ -63,9 +63,7 @@ namespace SQLTool.Klasy
                 using (SqlCommand cmdErp = new SqlCommand(sql, conErp))
                 {
                     conErp.Open();
-
                     SqlDataReader readerErp = cmdErp.ExecuteReader();
-
                     querySQL.Load(readerErp);                    
                 }
             }
@@ -73,6 +71,36 @@ namespace SQLTool.Klasy
             return querySQL;
         }
 
+        internal List<DataRow> getInstance()
+        {
+            List<DataRow> serverInstance = new List<DataRow>();
+            SqlDataSourceEnumerator instance = SqlDataSourceEnumerator.Instance;
+            DataTable tblServerInstance = instance.GetDataSources();
+            List<DataRow> list = tblServerInstance.AsEnumerable().ToList();
+            return serverInstance;
+            
+        }
+
+        public void getInstanceName()
+
+        {
+            List<string> serverInstance = new List<string>();
+            SqlDataSourceEnumerator instance = SqlDataSourceEnumerator.Instance;
+            DataTable tblServerInstance = instance.GetDataSources();
+        }
+
+        private static void DisplayData(System.Data.DataTable table)
+        {
+
+            foreach (System.Data.DataRow row in table.Rows)
+            {
+                foreach (System.Data.DataColumn col in table.Columns)
+                {
+                    MessageBox.Show("{0} = {1}" +  col.ColumnName + row[col]);
+                }
+               
+            }
+        }
 
 
     }

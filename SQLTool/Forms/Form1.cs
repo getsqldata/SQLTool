@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using SQLTool.Klasy;
 
 namespace SQLTool
 {
@@ -54,10 +55,6 @@ namespace SQLTool
             button1.Enabled = true;
             button2.Enabled = true;
 
-            
-            
-  
-
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -92,6 +89,11 @@ namespace SQLTool
             usingDatabase = comboBox1.Text;
             Query QueryForm = new Query();
             QueryForm.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            comboBox1.DataSource = logic.getInstance();
         }
     }
 }
