@@ -49,7 +49,11 @@ namespace SQLTool
         private void button3_Click(object sender, EventArgs e)
         {
             nameServer = textBox1.Text;             
-            comboBox1.DataSource = logic.GetDatabase();  
+            comboBox1.DataSource = logic.GetDatabase();
+            button1.Enabled = true;
+            button2.Enabled = true;
+
+            
             
   
 
@@ -74,13 +78,14 @@ namespace SQLTool
                 userNameSQL = textBox2.Text;
                 passwordSQL = textBox3.Text;
                 connectionString = "Data Source=" + Form1.nameServer + "; Initial Catalog=" + comboBox1.Text + ";User Id=" + userNameSQL + ";Password=" + passwordSQL + "; Connection Timeout = 30";
-                //MessageBox.Show("testmesedżboxa");
+                MessageBox.Show(connectionString);
 
             }
             else
             {
-                connectionString = "Data Source=" + Form1.nameServer + "; Initial Catalog=" + comboBox1.Text + ";Integrated Security=True; Connection Timeout = 30";
-
+                connectionString = "Data Source=" + Form1.nameServer + "; Initial Catalog=" + comboBox1.Text + ";Integrated Security=True;";
+                //connectionString = "Data Source=" + Form1.nameServer + ";Integrated Security=True;";
+                MessageBox.Show(connectionString);
             }
 
             Query QueryForm = new Query();

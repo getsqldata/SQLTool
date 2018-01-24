@@ -15,14 +15,21 @@ namespace SQLTool
     {
         public Query()
         {
-            InitializeComponent();
+            InitializeComponent();         
+            
         }
 
+       
         private void button1_Click(object sender, EventArgs e)
         {
             Logic logic = new Logic();
             string querySql = richTextBox1.Text;            
             dataGridView1.DataSource = logic.isLack(querySql);
+        }
+
+        private void Query_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show("Kiedy to wyskoczy?");
         }
     }
 }

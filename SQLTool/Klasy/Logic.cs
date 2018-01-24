@@ -78,9 +78,9 @@ namespace SQLTool.Klasy
         {
             DataTable isLack = new DataTable();
 
-            string connStringErp = "Data Source=" + Form1.nameServer + "; Integrated Security=True;Connection Timeout=5";
-
-            using (SqlConnection conErp = new SqlConnection("Data Source=MCEDRO-DELL\\SQLSRV; Integrated Security=True;"))
+            //string connStringErp = "Data Source=" + Form1.nameServer + "; Integrated Security=True;";
+            string connStringErp = Form1.connectionString;
+            using (SqlConnection conErp = new SqlConnection(connStringErp))
             {
                 
                 using (SqlCommand cmdErp = new SqlCommand(sql, conErp))
