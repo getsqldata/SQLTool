@@ -1,14 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using SQLTool.Klasy;
 
 namespace SQLTool
 {
@@ -50,11 +41,10 @@ namespace SQLTool
 
         private void button3_Click(object sender, EventArgs e)
         {
-            nameServer = textBox1.Text;             
+            nameServer = comboBox2.Text;             
             comboBox1.DataSource = logic.GetDatabase();
             button1.Enabled = true;
             button2.Enabled = true;
-
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -82,7 +72,6 @@ namespace SQLTool
             else
             {
                 connectionString = "Data Source=" + Form1.nameServer + "; Initial Catalog=" + comboBox1.Text + ";Integrated Security=True;";
-                //connectionString = "Data Source=" + Form1.nameServer + ";Integrated Security=True;";
                 MessageBox.Show(connectionString);
             }
 
@@ -93,7 +82,28 @@ namespace SQLTool
 
         private void button6_Click(object sender, EventArgs e)
         {
-            comboBox1.DataSource = logic.getInstance();
+            comboBox2.DataSource = logic.getInstance();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (radioButton2.Checked)
+            {
+                userNameSQL = textBox2.Text;
+                passwordSQL = textBox3.Text;
+                connectionString = "Data Source=" + Form1.nameServer + "; Initial Catalog=" + comboBox1.Text + ";User Id=" + userNameSQL + ";Password=" + passwordSQL + "; Connection Timeout = 30";
+                MessageBox.Show(connectionString);
+
+            }
+            else
+            {
+                connectionString = "Data Source=" + Form1.nameServer + "; Initial Catalog=" + comboBox1.Text + ";Integrated Security=True;";
+                MessageBox.Show(connectionString);
+            }
+
+            usingDatabase = comboBox1.Text;
+            logic.backup();
+
         }
     }
 }

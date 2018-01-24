@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data.Sql;
+using System.IO;
 
 namespace SQLTool.Klasy
 {
@@ -85,11 +86,11 @@ namespace SQLTool.Klasy
 
             foreach (System.Data.DataRow row in tblServerInstance.Rows)
             {
-                foreach (System.Data.DataColumn col in tblServerInstance.Columns)
+                foreach (System.Data.DataColumn col in tblServerInstance.Columns )
                 {
                     if (col.ColumnName == "ServerName")
                     {
-                        serverInstance.Add(col.ColumnName.Replace("ServerName", "") + row[col]);
+                        serverInstance.Add( row[0] + "\\" + row[1]);
                     }                    
                 }
 
@@ -97,6 +98,21 @@ namespace SQLTool.Klasy
 
             return serverInstance;
 
+        }
+        #endregion
+
+        #region Backup logic
+        public void backup()
+        { 
+            SaveFileDialog backupSQL = new SaveFileDialog();
+            backupSQL.Filter = "Bak|*.bak";
+            backupSQL.Title = "Save copy SQL in:";
+            backupSQL.ShowDialog();
+            string fullPathToBackup = Path.GetFullPath(backupSQL.FileName);
+            MessageBox.Show(Path.GetFullPath(backupSQL.FileName));
+            string queryBackup = "BACKUP DATABASE " + Form1.usingDatabase + " TO DISK ='" + fullPathToBackup + "'";
+            MessageBox.Show(queryBackup);
+            querySQL(queryBackup);
         }
         #endregion
     }

@@ -37,7 +37,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -46,6 +45,8 @@
             this.button5 = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.button6 = new System.Windows.Forms.Button();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -55,23 +56,24 @@
             // button1
             // 
             this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(43, 19);
+            this.button1.Location = new System.Drawing.Point(41, 25);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(115, 41);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Zapytanie SQL";
+            this.button1.Text = "SQL Query";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
             this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(43, 66);
+            this.button2.Location = new System.Drawing.Point(41, 72);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(115, 41);
             this.button2.TabIndex = 1;
             this.button2.Text = "Backup SQL";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -95,7 +97,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(52, 87);
+            this.label2.Location = new System.Drawing.Point(52, 103);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 4;
@@ -104,7 +106,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(52, 122);
+            this.label3.Location = new System.Drawing.Point(52, 138);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 5;
@@ -114,7 +116,7 @@
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(53, 52);
+            this.radioButton1.Location = new System.Drawing.Point(53, 68);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(140, 17);
             this.radioButton1.TabIndex = 7;
@@ -126,7 +128,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(199, 52);
+            this.radioButton2.Location = new System.Drawing.Point(199, 68);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(151, 17);
             this.radioButton2.TabIndex = 8;
@@ -134,18 +136,9 @@
             this.radioButton2.UseVisualStyleBackColor = true;
             this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(146, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(152, 20);
-            this.textBox1.TabIndex = 9;
-            this.textBox1.Text = "MCEDRO-DELL\\SQLSRV";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(146, 84);
+            this.textBox2.Location = new System.Drawing.Point(146, 100);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(204, 20);
@@ -153,7 +146,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(146, 119);
+            this.textBox3.Location = new System.Drawing.Point(146, 135);
             this.textBox3.Name = "textBox3";
             this.textBox3.PasswordChar = '*';
             this.textBox3.ReadOnly = true;
@@ -180,16 +173,16 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(43, 113);
+            this.button4.Location = new System.Drawing.Point(41, 119);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(115, 41);
             this.button4.TabIndex = 12;
-            this.button4.Text = "Other";
+            this.button4.Text = "Optima Tools";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(43, 160);
+            this.button5.Location = new System.Drawing.Point(41, 166);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(115, 41);
             this.button5.TabIndex = 12;
@@ -214,33 +207,53 @@
             this.splitContainer1.Panel2.Controls.Add(this.button6);
             this.splitContainer1.Panel2.Controls.Add(this.button3);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
+            this.splitContainer1.Panel2.Controls.Add(this.comboBox2);
             this.splitContainer1.Panel2.Controls.Add(this.comboBox1);
             this.splitContainer1.Panel2.Controls.Add(this.label2);
             this.splitContainer1.Panel2.Controls.Add(this.textBox3);
+            this.splitContainer1.Panel2.Controls.Add(this.label5);
             this.splitContainer1.Panel2.Controls.Add(this.label3);
             this.splitContainer1.Panel2.Controls.Add(this.textBox2);
             this.splitContainer1.Panel2.Controls.Add(this.radioButton1);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox1);
             this.splitContainer1.Panel2.Controls.Add(this.radioButton2);
-            this.splitContainer1.Size = new System.Drawing.Size(652, 287);
-            this.splitContainer1.SplitterDistance = 217;
+            this.splitContainer1.Size = new System.Drawing.Size(558, 244);
+            this.splitContainer1.SplitterDistance = 186;
             this.splitContainer1.TabIndex = 13;
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(304, 14);
+            this.button6.Location = new System.Drawing.Point(53, 39);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(46, 23);
+            this.button6.Size = new System.Drawing.Size(297, 23);
             this.button6.TabIndex = 11;
-            this.button6.Text = "?";
+            this.button6.Text = "Check server name";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(146, 14);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(201, 21);
+            this.comboBox2.TabIndex = 10;
+            this.comboBox2.Text = "MCEDRO-DELL\\SQLSRV";
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(52, 210);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(58, 13);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Databases";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(652, 287);
+            this.ClientSize = new System.Drawing.Size(558, 244);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.label4);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -266,7 +279,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label4;
@@ -275,6 +287,8 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Button button6;
+        public System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label5;
     }
 }
 
