@@ -13,6 +13,8 @@ namespace SQLTool.Forms
 {
     public partial class OptimaAddons : Form
     {
+        SQLTool.Klasy.Logic logic = new Klasy.Logic();
+
         public OptimaAddons()
         {
             InitializeComponent();
@@ -33,15 +35,15 @@ namespace SQLTool.Forms
         }
 
         private void button3_Click(object sender, EventArgs e)
-        {
-           
+        {           
 
             try
             {
                 var p = new Process();
-                p.StartInfo.FileName = "SQLServerManager10.msc";
-                p.Start();
+                p.StartInfo.FileName = "SQLServerManager12.msc";
                 MessageBox.Show("Pracujesz na wersji SQL 2014");
+                p.Start();
+                
             }
             catch 
             {
@@ -49,19 +51,39 @@ namespace SQLTool.Forms
                 try
                 {
                     var p = new Process();
-                    p.StartInfo.FileName = "SQLServerManager12.msc";
-                    p.Start();
+                    p.StartInfo.FileName = "SQLServerManager10.msc";
                     MessageBox.Show("Pracujesz na wersji SQL 2008");
+                    p.Start();
+                    
 
                 }
                 catch 
                 {
-                    MessageBox.Show("Pracujesz na wersji nie wiadomo jakiej");
+                    MessageBox.Show("Pracujesz na wersji SQL nie wiadomo jakiej");
                 }                
                 throw;
             }           
 
             
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+            DialogResult dr =  MessageBox.Show("Are you sure", "Reset admin password for Optima", MessageBoxButtons.YesNo);
+            switch(dr)
+            {
+                case DialogResult.Yes:
+                    string query = "update cdn.Operatorzy set Ope_Haslo='xMs3s6HjOEg', Ope_HasloChk='Fm'where Ope_Kod='ADMIN'";
+                    logic.querySQL(query);
+                    break;
+                case DialogResult.No:
+
+                    break;              
+
+            }
+         
+
         }
     }
 }

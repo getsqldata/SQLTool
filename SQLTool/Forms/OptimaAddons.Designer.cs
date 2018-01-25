@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,27 +50,26 @@
             this.panel1.Size = new System.Drawing.Size(396, 234);
             this.panel1.TabIndex = 0;
             // 
-            // button1
+            // button5
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(396, 46);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Cliconfg x86";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button5.Location = new System.Drawing.Point(0, 184);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(396, 46);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "Reset \'Admin\' password";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button2
+            // button4
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.Location = new System.Drawing.Point(0, 46);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(396, 46);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Cliconfg x64";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button4.Location = new System.Drawing.Point(0, 138);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(396, 46);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -83,25 +82,27 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
+            // button2
             // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.Location = new System.Drawing.Point(0, 138);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(396, 46);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.Location = new System.Drawing.Point(0, 46);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(396, 46);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Cliconfg x64";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button5
+            // button1
             // 
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.Location = new System.Drawing.Point(0, 184);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(396, 46);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Reset \'Admin\' password";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(396, 46);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Cliconfg x86";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // OptimaAddons
             // 
