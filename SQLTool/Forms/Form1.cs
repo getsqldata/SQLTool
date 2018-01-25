@@ -101,9 +101,30 @@ namespace SQLTool
 
 
         private void button2_Click(object sender, EventArgs e)
-        {            
+        {
 
-            usingDatabase = comboBox1.Text;
+            DialogResult dr = MessageBox.Show("Do you want compress bak file after create?", " Compress backup? ",  MessageBoxButtons.YesNo);
+            switch (dr)
+            {
+                case DialogResult.Yes:
+                    try
+                    {
+                        logic.backup();
+                    }
+                    catch
+                    {
+                        
+                        MessageBox.Show("Warning! You must use Optima database configuration.");
+                        throw;
+                    }
+
+                    break;
+                case DialogResult.No:
+
+                    logic.backup();
+                    logic.CreateZip();
+                    break;
+            }
             logic.backup();
         }
 
@@ -116,8 +137,8 @@ namespace SQLTool
 
         private void button7_Click(object sender, EventArgs e)
         {
-            
-                getConnectionString();
+            getConnectionString();
+
             if (Err == 0)
             {
                 button1.Enabled = true;

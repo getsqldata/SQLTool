@@ -8,11 +8,15 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data.Sql;
 using System.IO;
+using System.Diagnostics;
 
 namespace SQLTool.Klasy
 {
     class Logic
     {
+        public string fullPathToBackup;
+        public string pathRoot;
+        public string fileName;
         #region GetDatabase in selected instance
         internal List<string> GetDatabase()
         {
@@ -108,12 +112,29 @@ namespace SQLTool.Klasy
             backupSQL.Filter = "Bak|*.bak";
             backupSQL.Title = "Save copy SQL in:";
             backupSQL.ShowDialog();
-            string fullPathToBackup = Path.GetFullPath(backupSQL.FileName);
+            fullPathToBackup = Path.GetFullPath(backupSQL.FileName);
+            pathRoot = Path.GetDirectoryName(backupSQL.FileName);
+            fileName = Path.GetFileNameWithoutExtension(backupSQL.FileName);
             MessageBox.Show(Path.GetFullPath(backupSQL.FileName));
             string queryBackup = "BACKUP DATABASE " + Form1.usingDatabase + " TO DISK ='" + fullPathToBackup + "'";
             MessageBox.Show(queryBackup);
             querySQL(queryBackup);
         }
         #endregion
+
+
+        public void CreateZip()
+        {
+
+            MessageBox.Show(fullPathToBackup + pathRoot + fileName);      
+            string targetName = pathRoot+"\\" + fileName+".gzip";
+            ProcessStartInfo p = new ProcessStartInfo();
+            p.FileName = @"C:\Program Files\7-Zip\7zG.exe";
+            p.Arguments = "a -tgzip \"" + targetName + "\" \"" + fullPathToBackup + "\" -mx=9";
+            //p.WindowStyle = ProcessWindowStyle.Hidden;
+            Process x = Process.Start(p);
+            x.WaitForExit();
+            
+        }
     }
 }
