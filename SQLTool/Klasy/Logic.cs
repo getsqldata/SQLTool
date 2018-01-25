@@ -124,10 +124,8 @@ namespace SQLTool.Klasy
                 throw;
             }
            
-        }
+        }        
         
-
-
         public void CreateZip()
         {
             MessageBox.Show(fullPathToBackup + pathRoot + fileName);      
@@ -138,8 +136,7 @@ namespace SQLTool.Klasy
             //p.WindowStyle = ProcessWindowStyle.Hidden;
             Process x = Process.Start(p);
             x.WaitForExit();
-            File.Delete(fullPathToBackup);
-           
+            File.Delete(fullPathToBackup);           
         }
     }
     #endregion
