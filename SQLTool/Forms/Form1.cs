@@ -13,6 +13,7 @@ namespace SQLTool
         public static string passwordSQL;
         public static string connectionString;
         public static string usingDatabase;
+        public static int Err;
 
         SQLTool.Klasy.Logic logic = new Klasy.Logic();
 
@@ -44,8 +45,7 @@ namespace SQLTool
         {
             nameServer = comboBox2.Text;             
             comboBox1.DataSource = logic.GetDatabase();
-            button1.Enabled = true;
-            button2.Enabled = true;
+          
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -59,24 +59,7 @@ namespace SQLTool
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-
-
-            if (radioButton2.Checked)
-            {
-                userNameSQL = textBox2.Text;
-                passwordSQL = textBox3.Text;
-                connectionString = "Data Source=" + Form1.nameServer + "; Initial Catalog=" + comboBox1.Text + ";User Id=" + userNameSQL + ";Password=" + passwordSQL + "; Connection Timeout = 30";
-                MessageBox.Show(connectionString);
-
-            }
-            else
-            {
-                connectionString = "Data Source=" + Form1.nameServer + "; Initial Catalog=" + comboBox1.Text + ";Integrated Security=True;";
-                MessageBox.Show(connectionString);
-            }
-
-            usingDatabase = comboBox1.Text;
+        {            
             Query QueryForm = new Query();
             QueryForm.Show();
         }
@@ -86,36 +69,65 @@ namespace SQLTool
             comboBox2.DataSource = logic.getInstance();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void getConnectionString()
         {
             if (radioButton2.Checked)
             {
-                userNameSQL = textBox2.Text;
-                passwordSQL = textBox3.Text;
-                connectionString = "Data Source=" + Form1.nameServer + "; Initial Catalog=" + comboBox1.Text + ";User Id=" + userNameSQL + ";Password=" + passwordSQL + "; Connection Timeout = 30";
-                MessageBox.Show(connectionString);
-
+                
+                if (string.IsNullOrEmpty(textBox2.Text) || string.IsNullOrEmpty(textBox3.Text))
+                {
+                    MessageBox.Show("Fill username and password !");
+                    Err = 1;
+                }
+                else
+                {
+                    userNameSQL = textBox2.Text;
+                    passwordSQL = textBox3.Text;
+                    connectionString = "Data Source=" + Form1.nameServer + "; Initial Catalog=" + comboBox1.Text + ";User Id=" + userNameSQL + ";Password=" + passwordSQL + "; Connection Timeout = 30";
+                    MessageBox.Show(connectionString);
+                    usingDatabase = comboBox1.Text;
+                    Err = 0;
+                }
+                
             }
             else
             {
                 connectionString = "Data Source=" + Form1.nameServer + "; Initial Catalog=" + comboBox1.Text + ";Integrated Security=True;";
                 MessageBox.Show(connectionString);
-            }
+                usingDatabase = comboBox1.Text;
+                Err = 0;
+            }            
+        }
+
+
+        private void button2_Click(object sender, EventArgs e)
+        {            
 
             usingDatabase = comboBox1.Text;
             logic.backup();
-
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-
             SQLTool.Forms.OptimaAddons optimaAddons = new Forms.OptimaAddons();
             optimaAddons.Show();
-          
 
+        }
 
-
+        private void button7_Click(object sender, EventArgs e)
+        {
+            
+                getConnectionString();
+            if (Err == 0)
+            {
+                button1.Enabled = true;
+                button2.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Connection string is wrong");
+            }
+            
         }
     }
 }

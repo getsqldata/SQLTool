@@ -47,6 +47,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -56,7 +57,7 @@
             // button1
             // 
             this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(41, 25);
+            this.button1.Location = new System.Drawing.Point(37, 56);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(115, 41);
             this.button1.TabIndex = 0;
@@ -67,7 +68,7 @@
             // button2
             // 
             this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(41, 72);
+            this.button2.Location = new System.Drawing.Point(37, 103);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(115, 41);
             this.button2.TabIndex = 1;
@@ -79,9 +80,9 @@
             // 
             this.button3.Location = new System.Drawing.Point(53, 160);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(297, 41);
+            this.button3.Size = new System.Drawing.Size(297, 23);
             this.button3.TabIndex = 7;
-            this.button3.Text = "Connect";
+            this.button3.Text = "Databases list";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -156,7 +157,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(146, 207);
+            this.comboBox1.Location = new System.Drawing.Point(146, 189);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(204, 21);
             this.comboBox1.TabIndex = 8;
@@ -173,7 +174,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(41, 119);
+            this.button4.Location = new System.Drawing.Point(37, 150);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(115, 41);
             this.button4.TabIndex = 12;
@@ -183,7 +184,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(41, 166);
+            this.button5.Location = new System.Drawing.Point(37, 197);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(115, 41);
             this.button5.TabIndex = 12;
@@ -205,6 +206,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.button7);
             this.splitContainer1.Panel2.Controls.Add(this.button6);
             this.splitContainer1.Panel2.Controls.Add(this.button3);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
@@ -217,8 +219,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.textBox2);
             this.splitContainer1.Panel2.Controls.Add(this.radioButton1);
             this.splitContainer1.Panel2.Controls.Add(this.radioButton2);
-            this.splitContainer1.Size = new System.Drawing.Size(558, 244);
-            this.splitContainer1.SplitterDistance = 186;
+            this.splitContainer1.Size = new System.Drawing.Size(562, 295);
+            this.splitContainer1.SplitterDistance = 187;
             this.splitContainer1.TabIndex = 13;
             // 
             // button6
@@ -244,17 +246,27 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(52, 210);
+            this.label5.Location = new System.Drawing.Point(52, 192);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 13);
             this.label5.TabIndex = 5;
             this.label5.Text = "Databases";
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(55, 223);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(295, 53);
+            this.button7.TabIndex = 9;
+            this.button7.Text = "Connect";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(558, 244);
+            this.ClientSize = new System.Drawing.Size(562, 295);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.label4);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -290,6 +302,7 @@
         private System.Windows.Forms.Button button6;
         public System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button7;
     }
 }
 

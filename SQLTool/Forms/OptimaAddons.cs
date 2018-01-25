@@ -47,7 +47,6 @@ namespace SQLTool.Forms
             }
             catch 
             {
-
                 try
                 {
                     var p = new Process();
@@ -55,33 +54,47 @@ namespace SQLTool.Forms
                     MessageBox.Show("Pracujesz na wersji SQL 2008");
                     p.Start();
                     
-
                 }
                 catch 
                 {
                     MessageBox.Show("Pracujesz na wersji SQL nie wiadomo jakiej");
                 }                
                 throw;
-            }           
-
-            
+            }            
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-
-            DialogResult dr =  MessageBox.Show("Are you sure", "Reset admin password for Optima", MessageBoxButtons.YesNo);
-            switch(dr)
+            string test = Form1.usingDatabase;
+            if (Form1.connectionString != null)
             {
-                case DialogResult.Yes:
-                    string query = "update cdn.Operatorzy set Ope_Haslo='xMs3s6HjOEg', Ope_HasloChk='Fm'where Ope_Kod='ADMIN'";
-                    logic.querySQL(query);
-                    break;
-                case DialogResult.No:
+                DialogResult dr = MessageBox.Show("Are you sure reset admin password for Optima on " + Form1.usingDatabase + " database", "Reset admin password for Optima", MessageBoxButtons.YesNo);
+                switch (dr)
+                {
+                    case DialogResult.Yes:
+                        try
+                        {
+                            string query = "update cdn.Operatorzy set Ope_Haslo='xMs3s6HjOEg', Ope_HasloChk='Fm'where Ope_Kod='ADMIN'";
+                            logic.querySQL(query);
+                            MessageBox.Show("Password is empty. ");
+                        }
+                        catch 
+                        {
+                            MessageBox.Show("Warning! You must use Optima database configuration. ");
+                            throw;
+                        }
+                        
+                        break;
+                    case DialogResult.No:
 
-                    break;              
-
+                        break;
+                }
             }
+            else
+            {
+                MessageBox.Show("You did not select database to use ");
+            }
+            
          
 
         }
