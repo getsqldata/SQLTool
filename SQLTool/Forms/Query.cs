@@ -15,8 +15,7 @@ namespace SQLTool
     {
         public Query()
         {
-            InitializeComponent();         
-            
+            InitializeComponent();
         }
        
         private void button1_Click(object sender, EventArgs e)
@@ -29,6 +28,11 @@ namespace SQLTool
         private void Query_Load(object sender, EventArgs e)
         {
             button1.Text = button1.Text + " on "  + Form1.usingDatabase;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

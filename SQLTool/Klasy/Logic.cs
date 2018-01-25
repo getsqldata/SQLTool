@@ -14,6 +14,7 @@ namespace SQLTool.Klasy
         public string fullPathToBackup;
         public string pathRoot;
         public string fileName;
+
         #region GetDatabase in selected instance
         internal List<string> GetDatabase()
         {

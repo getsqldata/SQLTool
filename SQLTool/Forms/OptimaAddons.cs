@@ -28,7 +28,7 @@ namespace SQLTool.Forms
         }
 
         private void button3_Click(object sender, EventArgs e)
-        {           
+        {
 
             try
             {
@@ -52,7 +52,7 @@ namespace SQLTool.Forms
                     MessageBox.Show("Pracujesz na wersji SQL nie wiadomo jakiej");
                 }                
                 throw;
-            }            
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -86,8 +86,6 @@ namespace SQLTool.Forms
             {
                 MessageBox.Show("You did not select database to use ");
             }
-            
-         
 
         }
     }
