@@ -190,6 +190,7 @@
             this.button5.TabIndex = 12;
             this.button5.Text = "About";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Visible = false;
             // 
             // splitContainer1
             // 

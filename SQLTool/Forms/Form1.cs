@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace SQLTool
@@ -106,26 +105,16 @@ namespace SQLTool
             DialogResult dr = MessageBox.Show("Do you want compress bak file after create?", " Compress backup? ",  MessageBoxButtons.YesNo);
             switch (dr)
             {
-                case DialogResult.Yes:
-                    try
-                    {
-                        logic.backup();
-                    }
-                    catch
-                    {
-                        
-                        MessageBox.Show("Warning! You must use Optima database configuration.");
-                        throw;
-                    }
-
-                    break;
                 case DialogResult.No:
+                  
+                    logic.backup();                    
+                    break;
 
+                case DialogResult.Yes:
                     logic.backup();
                     logic.CreateZip();
                     break;
             }
-            logic.backup();
         }
 
         private void button4_Click(object sender, EventArgs e)

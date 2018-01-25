@@ -1,9 +1,6 @@
-﻿using System;
-using System.Data;
+﻿using System.Data;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data.Sql;
@@ -62,7 +59,6 @@ namespace SQLTool.Klasy
 
         {
             DataTable querySQL = new DataTable();
-
             //string connStringErp = "Data Source=" + Form1.nameServer + "; Integrated Security=True;";
             string connStringErp = Form1.connectionString;
             using (SqlConnection conErp = new SqlConnection(connStringErp))
@@ -105,27 +101,35 @@ namespace SQLTool.Klasy
         }
         #endregion
 
-        #region Backup logic
+        #region Backup logic and zip implementation
         public void backup()
-        { 
-            SaveFileDialog backupSQL = new SaveFileDialog();
-            backupSQL.Filter = "Bak|*.bak";
-            backupSQL.Title = "Save copy SQL in:";
-            backupSQL.ShowDialog();
-            fullPathToBackup = Path.GetFullPath(backupSQL.FileName);
-            pathRoot = Path.GetDirectoryName(backupSQL.FileName);
-            fileName = Path.GetFileNameWithoutExtension(backupSQL.FileName);
-            MessageBox.Show(Path.GetFullPath(backupSQL.FileName));
-            string queryBackup = "BACKUP DATABASE " + Form1.usingDatabase + " TO DISK ='" + fullPathToBackup + "'";
-            MessageBox.Show(queryBackup);
-            querySQL(queryBackup);
+        {
+
+            try
+            {
+                SaveFileDialog backupSQL = new SaveFileDialog();
+                backupSQL.Filter = "Bak|*.bak";
+                backupSQL.Title = "Save copy SQL in:";
+                backupSQL.ShowDialog();
+                fullPathToBackup = Path.GetFullPath(backupSQL.FileName);
+                pathRoot = Path.GetDirectoryName(backupSQL.FileName);
+                fileName = Path.GetFileNameWithoutExtension(backupSQL.FileName);
+                MessageBox.Show(Path.GetFullPath(backupSQL.FileName));
+                string queryBackup = "BACKUP DATABASE " + Form1.usingDatabase + " TO DISK ='" + fullPathToBackup + "'";
+                querySQL(queryBackup);
+            }
+            catch (System.Exception)
+            {
+                MessageBox.Show("Backup fail");
+                throw;
+            }
+           
         }
-        #endregion
+        
 
 
         public void CreateZip()
         {
-
             MessageBox.Show(fullPathToBackup + pathRoot + fileName);      
             string targetName = pathRoot+"\\" + fileName+".gzip";
             ProcessStartInfo p = new ProcessStartInfo();
@@ -134,7 +138,9 @@ namespace SQLTool.Klasy
             //p.WindowStyle = ProcessWindowStyle.Hidden;
             Process x = Process.Start(p);
             x.WaitForExit();
-            
+            File.Delete(fullPathToBackup);
+           
         }
     }
+    #endregion
 }
