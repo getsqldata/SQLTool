@@ -17,17 +17,15 @@ namespace SQLTool.Klasy
 
         #region GetDatabase in selected instance
         internal List<string> GetDatabase()
-        {
-
-            //string nameServer = Form1.nameServer;
+        {                       
             List<string> dbases = new List<string>(); //lists of databases in instance
             //string connectionString = "Data Source=MCEDRO-DELL\\SQLSRV; Integrated Security=True;";
-            string connectionString = "Data Source=" + Form1.nameServer + "; Integrated Security=True;Connection Timeout=5";
+            //string connectionString = "Data Source=" + Form1.nameServer + "; Integrated Security=True;Connection Timeout=5;";
 
             try
             {
 
-                using (SqlConnection con = new SqlConnection(connectionString))
+                using (SqlConnection con = new SqlConnection(Form1.connectionStringDB))
                 {
                     con.Open();
                     using (SqlCommand cmd = new SqlCommand("SELECT name from sys.databases", con))

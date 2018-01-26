@@ -49,7 +49,18 @@ namespace SQLTool.Forms
                 }
                 catch 
                 {
-                    MessageBox.Show("Pracujesz na wersji SQL nie wiadomo jakiej");
+                    try
+                    {
+                        var p = new Process();
+                        p.StartInfo.FileName = "SQLServerManager14.msc";
+                        MessageBox.Show("Pracujesz na wersji SQL 2017");
+                        p.Start();
+                    }
+                    catch 
+                    {
+                        MessageBox.Show("Pracujesz na wersji SQL nie wiadomo jakiej");
+                        throw;
+                    }
                 }                
                 throw;
             }
@@ -68,11 +79,11 @@ namespace SQLTool.Forms
                         {
                             string query = "update cdn.Operatorzy set Ope_Haslo='xMs3s6HjOEg', Ope_HasloChk='Fm'where Ope_Kod='ADMIN'";
                             logic.querySQL(query);
-                            MessageBox.Show("Password is empty. ");
+                            MessageBox.Show("Password is empty. Please restart Optima");
                         }
                         catch 
                         {
-                            MessageBox.Show("Warning! You must use Optima database configuration. ");
+                            MessageBox.Show("Warning! You must use Optima database configuration.");
                             throw;
                         }
                         

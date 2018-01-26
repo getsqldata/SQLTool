@@ -11,6 +11,7 @@ namespace SQLTool
         public static string userNameSQL;
         public static string passwordSQL;
         public static string connectionString;
+        public static string connectionStringDB;
         public static string usingDatabase;
         public static int Err;
 
@@ -42,7 +43,7 @@ namespace SQLTool
 
         private void button3_Click(object sender, EventArgs e)
         {
-            nameServer = comboBox2.Text;             
+            getConnectionString();
             comboBox1.DataSource = logic.GetDatabase();
           
         }
@@ -65,10 +66,11 @@ namespace SQLTool
 
         private void button6_Click(object sender, EventArgs e)
         {
+            getConnectionString();
             comboBox2.DataSource = logic.getInstance();
         }
 
-        private void getConnectionString()
+        public void getConnectionString()
         {
             if (radioButton2.Checked)
             {
@@ -82,7 +84,8 @@ namespace SQLTool
                 {
                     userNameSQL = textBox2.Text;
                     passwordSQL = textBox3.Text;
-                    connectionString = "Data Source=" + Form1.nameServer + "; Initial Catalog=" + comboBox1.Text + ";User Id=" + userNameSQL + ";Password=" + passwordSQL + "; Connection Timeout = 30";
+                    connectionString = "Data Source=" + comboBox2.Text + "; Initial Catalog=" + comboBox1.Text + ";User Id=" + userNameSQL + ";Password=" + passwordSQL + "; Connection Timeout = 30;";
+                    connectionStringDB = "Data Source=" + comboBox2.Text + ";User Id=" + userNameSQL + ";Password=" + passwordSQL + "; Connection Timeout=5;";
                     MessageBox.Show(connectionString);
                     usingDatabase = comboBox1.Text;
                     Err = 0;
@@ -91,7 +94,8 @@ namespace SQLTool
             }
             else
             {
-                connectionString = "Data Source=" + Form1.nameServer + "; Initial Catalog=" + comboBox1.Text + ";Integrated Security=True;";
+                connectionString = "Data Source=" + comboBox2.Text + "; Initial Catalog=" + comboBox1.Text + ";Integrated Security=True; Connection Timeout=5;";
+                connectionStringDB = "Data Source=" + comboBox2.Text + "; Integrated Security=True; Connection Timeout=5;";
                 MessageBox.Show(connectionString);
                 usingDatabase = comboBox1.Text;
                 Err = 0;
@@ -138,6 +142,11 @@ namespace SQLTool
                 MessageBox.Show("Connection string is wrong");
             }
             
+        }
+
+        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
