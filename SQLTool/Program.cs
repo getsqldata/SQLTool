@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLTool.Forms;
+using System;
 using System.Windows.Forms;
 
 namespace SQLTool
@@ -13,7 +14,7 @@ namespace SQLTool
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new LoginForm());
         }
     }
 }
