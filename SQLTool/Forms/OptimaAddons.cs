@@ -15,16 +15,35 @@ namespace SQLTool.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var p = new Process();
-            p.StartInfo.FileName = "C:\\Windows\\system32\\cliconfg.exe";  
-            p.Start();
+            try
+            {
+                var p = new Process();
+                p.StartInfo.FileName = "C:\\Windows\\system32\\cliconfg.exe";
+                p.Start();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error - File not exists");
+                throw;
+            }
+          
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var p = new Process();
-            p.StartInfo.FileName = "C:\\Windows\\SysWow64\\cliconfg.exe"; 
-            p.Start();
+
+            try
+            {
+                var p = new Process();
+                p.StartInfo.FileName = "C:\\Windows\\SysWow64\\cliconfg.exe";
+                p.Start();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error - File not exists");
+                throw;
+            }
+          
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -35,8 +54,7 @@ namespace SQLTool.Forms
                 var p = new Process();
                 p.StartInfo.FileName = "SQLServerManager12.msc";
                 MessageBox.Show("Pracujesz na wersji SQL 2014");
-                p.Start();
-                
+                p.Start();                
             }
             catch 
             {

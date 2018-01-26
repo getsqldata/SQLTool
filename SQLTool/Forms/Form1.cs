@@ -44,8 +44,7 @@ namespace SQLTool
         private void button3_Click(object sender, EventArgs e)
         {
             getConnectionString();
-            comboBox1.DataSource = logic.GetDatabase();
-          
+            comboBox1.DataSource = logic.GetDatabase();          
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -73,8 +72,7 @@ namespace SQLTool
         public void getConnectionString()
         {
             if (radioButton2.Checked)
-            {
-                
+            {                
                 if (string.IsNullOrEmpty(textBox2.Text) || string.IsNullOrEmpty(textBox3.Text))
                 {
                     MessageBox.Show("Fill username and password !");
@@ -89,8 +87,7 @@ namespace SQLTool
                     //MessageBox.Show(connectionString + "\n" + connectionStringDB);
                     usingDatabase = comboBox1.Text;
                     Err = 0;
-                }
-                
+                }                
             }
             else
             {
@@ -101,7 +98,6 @@ namespace SQLTool
                 Err = 0;
             }            
         }
-
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -130,7 +126,6 @@ namespace SQLTool
         private void button7_Click(object sender, EventArgs e)
         {
             getConnectionString();
-
             if (Err == 0)
             {
                 button1.Enabled = true;
@@ -139,8 +134,7 @@ namespace SQLTool
             else
             {
                 MessageBox.Show("Connection string is wrong");
-            }
-            
+            }            
         }
 
         private void bindingSource1_CurrentChanged(object sender, EventArgs e)
