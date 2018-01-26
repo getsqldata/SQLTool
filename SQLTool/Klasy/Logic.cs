@@ -57,45 +57,64 @@ namespace SQLTool.Klasy
         public DataTable querySQL(string sql)
 
         {
-            DataTable querySQL = new DataTable();
-            //string connStringErp = "Data Source=" + Form1.nameServer + "; Integrated Security=True;";
-            string connStringErp = Form1.connectionString;
-            using (SqlConnection conErp = new SqlConnection(connStringErp))
+            try
             {
-
-                using (SqlCommand cmdErp = new SqlCommand(sql, conErp))
+                DataTable querySQL = new DataTable();
+                //string connStringErp = "Data Source=" + Form1.nameServer + "; Integrated Security=True;";
+                string connStringErp = Form1.connectionString;
+                using (SqlConnection conErp = new SqlConnection(connStringErp))
                 {
-                    conErp.Open();
-                    SqlDataReader readerErp = cmdErp.ExecuteReader();
-                    querySQL.Load(readerErp);
-                }
-            }
 
-            return querySQL;
+                    using (SqlCommand cmdErp = new SqlCommand(sql, conErp))
+                    {
+                        conErp.Open();
+                        SqlDataReader readerErp = cmdErp.ExecuteReader();
+                        querySQL.Load(readerErp);
+                    }
+                }
+
+                return querySQL;
+            }
+            catch (System.Exception)
+            {
+                MessageBox.Show("Error!!");
+                throw;
+            }
+         
         }
         #endregion
 
         #region GetInstanceNames in local network
         internal List<string> getInstance()
         {
-            List<string> serverInstance = new List<string>();
-            SqlDataSourceEnumerator instance = SqlDataSourceEnumerator.Instance;
-            DataTable tblServerInstance = instance.GetDataSources();
-            List<DataRow> list = tblServerInstance.AsEnumerable().ToList();
 
-            foreach (System.Data.DataRow row in tblServerInstance.Rows)
+            try
             {
-                foreach (System.Data.DataColumn col in tblServerInstance.Columns )
+                List<string> serverInstance = new List<string>();
+                SqlDataSourceEnumerator instance = SqlDataSourceEnumerator.Instance;
+                DataTable tblServerInstance = instance.GetDataSources();
+                List<DataRow> list = tblServerInstance.AsEnumerable().ToList();
+
+                foreach (System.Data.DataRow row in tblServerInstance.Rows)
                 {
-                    if (col.ColumnName == "ServerName")
+                    foreach (System.Data.DataColumn col in tblServerInstance.Columns)
                     {
-                        serverInstance.Add( row[0] + "\\" + row[1]);
-                    }                    
+                        if (col.ColumnName == "ServerName")
+                        {
+                            serverInstance.Add(row[0] + "\\" + row[1]);
+                        }
+                    }
+
                 }
 
+                return serverInstance;
             }
-
-            return serverInstance;
+            catch (System.Exception)
+            {
+                MessageBox.Show("Error");
+                throw;
+            }
+           
 
         }
         #endregion

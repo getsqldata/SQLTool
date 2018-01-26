@@ -86,7 +86,7 @@ namespace SQLTool
                     passwordSQL = textBox3.Text;
                     connectionString = "Data Source=" + comboBox2.Text + "; Initial Catalog=" + comboBox1.Text + ";User Id=" + userNameSQL + ";Password=" + passwordSQL + "; Connection Timeout = 30;";
                     connectionStringDB = "Data Source=" + comboBox2.Text + ";User Id=" + userNameSQL + ";Password=" + passwordSQL + "; Connection Timeout=5;";
-                    MessageBox.Show(connectionString);
+                    //MessageBox.Show(connectionString + "\n" + connectionStringDB);
                     usingDatabase = comboBox1.Text;
                     Err = 0;
                 }
@@ -96,7 +96,7 @@ namespace SQLTool
             {
                 connectionString = "Data Source=" + comboBox2.Text + "; Initial Catalog=" + comboBox1.Text + ";Integrated Security=True; Connection Timeout=5;";
                 connectionStringDB = "Data Source=" + comboBox2.Text + "; Integrated Security=True; Connection Timeout=5;";
-                MessageBox.Show(connectionString);
+                //MessageBox.Show(connectionString + "\n" + connectionStringDB);
                 usingDatabase = comboBox1.Text;
                 Err = 0;
             }            
@@ -106,7 +106,7 @@ namespace SQLTool
         private void button2_Click(object sender, EventArgs e)
         {
 
-            DialogResult dr = MessageBox.Show("Do you want compress bak file after create?", " Compress backup? ",  MessageBoxButtons.YesNo);
+            DialogResult dr = MessageBox.Show("Do you want compress bak file after create? \n\nYou must have 7zip 64BIT!!!", " Compress backup? ",  MessageBoxButtons.YesNo);
             switch (dr)
             {
                 case DialogResult.No:
@@ -125,7 +125,6 @@ namespace SQLTool
         {
             SQLTool.Forms.OptimaAddons optimaAddons = new Forms.OptimaAddons();
             optimaAddons.Show();
-
         }
 
         private void button7_Click(object sender, EventArgs e)
