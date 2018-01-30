@@ -195,12 +195,17 @@
             // 
             // splitContainer1
             // 
+            this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer1.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.splitContainer1.IsSplitterFixed = true;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.White;
             this.splitContainer1.Panel1.Controls.Add(this.label6);
             this.splitContainer1.Panel1.Controls.Add(this.button1);
             this.splitContainer1.Panel1.Controls.Add(this.button5);
@@ -209,6 +214,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.BackColor = System.Drawing.Color.White;
             this.splitContainer1.Panel2.Controls.Add(this.button7);
             this.splitContainer1.Panel2.Controls.Add(this.button6);
             this.splitContainer1.Panel2.Controls.Add(this.button3);
@@ -224,7 +230,9 @@
             this.splitContainer1.Panel2.Controls.Add(this.radioButton2);
             this.splitContainer1.Size = new System.Drawing.Size(562, 295);
             this.splitContainer1.SplitterDistance = 187;
+            this.splitContainer1.SplitterWidth = 2;
             this.splitContainer1.TabIndex = 13;
+            this.splitContainer1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer1_SplitterMoved);
             // 
             // label6
             // 

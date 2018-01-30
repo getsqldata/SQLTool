@@ -16,13 +16,14 @@ namespace SQLTool.Forms
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        void loginToProgram()
         {
             string user = "admin";
             string pass = "";
-            if (textBox1.Text==user && textBox2.Text == pass)
+            if (textBox1.Text == user && textBox2.Text == pass)
             {
-                MessageBox.Show("Login Successful!");
+                //MessageBox.Show("Login Successful!");
                 progressBar1.Visible = true;
                 int i;
                 for (i = 0; i < 100; i++)
@@ -38,16 +39,55 @@ namespace SQLTool.Forms
             {
                 MessageBox.Show("Username and password is incorrect \nTry again or leave!");
             }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            loginToProgram();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+            
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                loginToProgram();
+            }
+        }
+
+        private void textBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                loginToProgram();
+            }
+        }
+
+        private void textBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                loginToProgram();
+            }
+        }
+
+        private void textBox2_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                loginToProgram();
+            }
         }
     }
 }
