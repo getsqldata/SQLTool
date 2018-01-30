@@ -16,7 +16,6 @@ namespace SQLTool.Forms
 
         }
 
-
         void loginToProgram()
         {
             string user = "admin";
@@ -47,11 +46,6 @@ namespace SQLTool.Forms
             loginToProgram();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-            
-        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
