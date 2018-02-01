@@ -131,10 +131,9 @@ namespace SQLTool.Klasy
                 string queryBackup = "BACKUP DATABASE " + Form1.usingDatabase + " TO DISK ='" + fullPathToBackup + "'";
                 querySQL(queryBackup);
             }
-            catch (System.Exception)
+            catch 
             {
                 MessageBox.Show("Backup fail");
-                throw;
             }           
         }        
         
