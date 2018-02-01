@@ -126,7 +126,7 @@ namespace SQLTool
         private void button7_Click(object sender, EventArgs e)
         {
             getConnectionString();
-            if (Err == 0)
+            if (Err == 0 && comboBox1.Text != "")
             {
                 button1.Enabled = true;
                 button2.Enabled = true;

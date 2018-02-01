@@ -24,7 +24,6 @@ namespace SQLTool.Klasy
 
             try
             {
-
                 using (SqlConnection con = new SqlConnection(Form1.connectionStringDB))
                 {
                     con.Open();
@@ -49,7 +48,6 @@ namespace SQLTool.Klasy
                 MessageBox.Show("UPS - Check server name");
             }
             return dbases;
-
         }
         #endregion
 
@@ -64,7 +62,6 @@ namespace SQLTool.Klasy
                 string connStringErp = Form1.connectionString;
                 using (SqlConnection conErp = new SqlConnection(connStringErp))
                 {
-
                     using (SqlCommand cmdErp = new SqlCommand(sql, conErp))
                     {
                         conErp.Open();
@@ -72,15 +69,13 @@ namespace SQLTool.Klasy
                         querySQL.Load(readerErp);
                     }
                 }
-
                 return querySQL;
             }
             catch (System.Exception)
             {
                 MessageBox.Show("Error!!");
                 throw;
-            }
-         
+            }         
         }
         #endregion
 
@@ -122,7 +117,6 @@ namespace SQLTool.Klasy
         #region Backup logic and zip implementation
         public void backup()
         {
-
             try
             {
                 SaveFileDialog backupSQL = new SaveFileDialog();
@@ -132,7 +126,8 @@ namespace SQLTool.Klasy
                 fullPathToBackup = Path.GetFullPath(backupSQL.FileName);
                 pathRoot = Path.GetDirectoryName(backupSQL.FileName);
                 fileName = Path.GetFileNameWithoutExtension(backupSQL.FileName);
-                MessageBox.Show(Path.GetFullPath(backupSQL.FileName));
+                //MessageBox.Show(Path.GetFullPath(backupSQL.FileName));
+                //MessageBox.Show(Directory.GetCurrentDirectory());
                 string queryBackup = "BACKUP DATABASE " + Form1.usingDatabase + " TO DISK ='" + fullPathToBackup + "'";
                 querySQL(queryBackup);
             }
@@ -140,8 +135,7 @@ namespace SQLTool.Klasy
             {
                 MessageBox.Show("Backup fail");
                 throw;
-            }
-           
+            }           
         }        
         
         public void CreateZip()
@@ -149,12 +143,20 @@ namespace SQLTool.Klasy
             MessageBox.Show(fullPathToBackup + pathRoot + fileName);      
             string targetName = pathRoot+"\\" + fileName+".gzip";
             ProcessStartInfo p = new ProcessStartInfo();
-            p.FileName = @"C:\Program Files\7-Zip\7zG.exe";
+            if (File.Exists(@"C:\Program Files\7-Zip\7zG.exe") == true) 
+            {
+                p.FileName = @"C:\Program Files\7-Zip\7zG.exe";
+            }
+            else
+            {
+                p.FileName = Directory.GetCurrentDirectory() + "\\7za.exe";
+            }
             p.Arguments = "a -tgzip \"" + targetName + "\" \"" + fullPathToBackup + "\" -mx=9";
             //p.WindowStyle = ProcessWindowStyle.Hidden;
             Process x = Process.Start(p);
             x.WaitForExit();
-            File.Delete(fullPathToBackup);           
+            File.Delete(fullPathToBackup);
+            MessageBox.Show("Backup done");
         }
     }
     #endregion
