@@ -109,7 +109,7 @@
             this.Name = "LoginForm";
             this.ShowIcon = false;
             this.Text = "Sign in";
-            this.Load += new System.EventHandler(this.LoginForm_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoginForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

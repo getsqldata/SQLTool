@@ -10,12 +10,6 @@ namespace SQLTool.Forms
             InitializeComponent();
         }
 
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-             
-
-        }
-
         void loginToProgram()
         {
             string user = "admin";
@@ -82,6 +76,11 @@ namespace SQLTool.Forms
             {
                 loginToProgram();
             }
+        }
+
+        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+           
         }
     }
 }
