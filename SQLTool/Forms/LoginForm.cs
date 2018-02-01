@@ -26,7 +26,7 @@ namespace SQLTool.Forms
                 }
                 this.Hide();
                 Form1 programform = new Form1();
-                programform.Show();
+                programform.Show();               
             }
             else
             {
