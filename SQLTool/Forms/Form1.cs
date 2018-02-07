@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using SQLTool.Forms;
 
 namespace SQLTool
 {
@@ -144,12 +145,17 @@ namespace SQLTool
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+          
         }
 
         private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
         {
 
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

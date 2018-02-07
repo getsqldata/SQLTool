@@ -37,6 +37,7 @@ namespace SQLTool.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             loginToProgram();
         }
 
@@ -81,6 +82,11 @@ namespace SQLTool.Forms
         private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
         {
            
+        }
+
+        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

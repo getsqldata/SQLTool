@@ -99,6 +99,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Query";
             this.Text = "Query";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Query_FormClosing);
             this.Load += new System.EventHandler(this.Query_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);

@@ -48,12 +48,12 @@ namespace SQLTool.Forms
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            
             try
             {
                 var p = new Process();
                 p.StartInfo.FileName = "SQLServerManager12.msc";
-                MessageBox.Show("Pracujesz na wersji SQL 2014");
+                //MessageBox.Show("Pracujesz na wersji SQL 2014");
                 p.Start();                
             }
             catch 
@@ -62,7 +62,7 @@ namespace SQLTool.Forms
                 {
                     var p = new Process();
                     p.StartInfo.FileName = "SQLServerManager10.msc";
-                    MessageBox.Show("Pracujesz na wersji SQL 2008");
+                    //MessageBox.Show("Pracujesz na wersji SQL 2008");
                     p.Start();
                 }
                 catch 
@@ -71,16 +71,16 @@ namespace SQLTool.Forms
                     {
                         var p = new Process();
                         p.StartInfo.FileName = "SQLServerManager14.msc";
-                        MessageBox.Show("Pracujesz na wersji SQL 2017");
+                        //MessageBox.Show("Pracujesz na wersji SQL 2017");
                         p.Start();
                     }
                     catch 
                     {
-                        MessageBox.Show("Pracujesz na wersji SQL nie wiadomo jakiej");
-                        throw;
+                        MessageBox.Show("Pracujesz na wersji SQL nie wiadomo jakiej lub nie masz zainstalowanego serwera MS SQL");
+                        
                     }
-                }                
-                throw;
+                }              
+                
             }
         }
 

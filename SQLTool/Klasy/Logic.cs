@@ -39,11 +39,9 @@ namespace SQLTool.Klasy
                             db.Close();
                         }
                     }
-
                 }
             }
             catch
-
             {
                 MessageBox.Show("UPS - Check server name");
             }

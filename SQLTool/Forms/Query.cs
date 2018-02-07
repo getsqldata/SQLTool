@@ -34,5 +34,10 @@ namespace SQLTool
         {
 
         }
+
+        private void Query_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
