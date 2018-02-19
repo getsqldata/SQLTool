@@ -229,7 +229,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.textBox2);
             this.splitContainer1.Panel2.Controls.Add(this.radioButton1);
             this.splitContainer1.Panel2.Controls.Add(this.radioButton2);
-            this.splitContainer1.Size = new System.Drawing.Size(621, 299);
+            this.splitContainer1.Size = new System.Drawing.Size(590, 301);
             this.splitContainer1.SplitterDistance = 220;
             this.splitContainer1.SplitterWidth = 2;
             this.splitContainer1.TabIndex = 13;
@@ -287,7 +287,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(621, 299);
+            this.ClientSize = new System.Drawing.Size(590, 301);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.label4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
