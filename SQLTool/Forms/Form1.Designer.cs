@@ -58,7 +58,7 @@
             // button1
             // 
             this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(37, 56);
+            this.button1.Location = new System.Drawing.Point(47, 42);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(115, 41);
             this.button1.TabIndex = 0;
@@ -69,7 +69,7 @@
             // button2
             // 
             this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(37, 103);
+            this.button2.Location = new System.Drawing.Point(47, 89);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(115, 41);
             this.button2.TabIndex = 1;
@@ -175,7 +175,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(37, 150);
+            this.button4.Location = new System.Drawing.Point(47, 136);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(115, 41);
             this.button4.TabIndex = 12;
@@ -185,7 +185,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(37, 197);
+            this.button5.Location = new System.Drawing.Point(47, 183);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(115, 41);
             this.button5.TabIndex = 12;
@@ -211,6 +211,7 @@
             this.splitContainer1.Panel1.Controls.Add(this.button5);
             this.splitContainer1.Panel1.Controls.Add(this.button2);
             this.splitContainer1.Panel1.Controls.Add(this.button4);
+            this.splitContainer1.Panel1MinSize = 40;
             // 
             // splitContainer1.Panel2
             // 
@@ -228,8 +229,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.textBox2);
             this.splitContainer1.Panel2.Controls.Add(this.radioButton1);
             this.splitContainer1.Panel2.Controls.Add(this.radioButton2);
-            this.splitContainer1.Size = new System.Drawing.Size(562, 295);
-            this.splitContainer1.SplitterDistance = 187;
+            this.splitContainer1.Size = new System.Drawing.Size(621, 299);
+            this.splitContainer1.SplitterDistance = 220;
             this.splitContainer1.SplitterWidth = 2;
             this.splitContainer1.TabIndex = 13;
             this.splitContainer1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer1_SplitterMoved);
@@ -237,7 +238,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(50, 263);
+            this.label6.Location = new System.Drawing.Point(60, 249);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(86, 13);
             this.label6.TabIndex = 13;
@@ -286,7 +287,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(562, 295);
+            this.ClientSize = new System.Drawing.Size(621, 299);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.label4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
