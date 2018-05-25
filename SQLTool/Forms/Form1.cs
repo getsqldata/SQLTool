@@ -22,8 +22,7 @@ namespace SQLTool
         public Form1()
         {
             InitializeComponent();
-        }       
-      
+        }      
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
@@ -106,11 +105,9 @@ namespace SQLTool
             DialogResult dr = MessageBox.Show("Do you want compress bak file after create? \n\nYou must have 7zip 64BIT!!!", " Compress backup? ",  MessageBoxButtons.YesNo);
             switch (dr)
             {
-                case DialogResult.No:
-                  
+                case DialogResult.No:                  
                     logic.backup();                    
                     break;
-
                 case DialogResult.Yes:
                     logic.backup();
                     logic.CreateZip();

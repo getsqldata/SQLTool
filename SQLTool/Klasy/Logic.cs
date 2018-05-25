@@ -308,9 +308,4 @@ namespace SQLTool.Klasy
         #endregion
         
     }
-
-
-
-
-
 }
