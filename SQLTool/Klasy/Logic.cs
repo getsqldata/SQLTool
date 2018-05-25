@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using System.Data.Sql;
 using System.IO;
 using System.Diagnostics;
+using System;
 
 namespace SQLTool.Klasy
 {
@@ -152,6 +153,122 @@ namespace SQLTool.Klasy
             File.Delete(fullPathToBackup);
             MessageBox.Show("Backup done");
         }
+
+        #endregion
+
+        #region Reset admin password for Comarch Optima
+        public void ResetPassOptima()
+        {
+            string test = Form1.usingDatabase;
+            if (Form1.connectionString != null)
+            {
+                DialogResult dr = MessageBox.Show("Are you sure reset admin password for Optima on " + Form1.usingDatabase + " database", "Reset admin password for Optima", MessageBoxButtons.YesNo);
+                switch (dr)
+                {
+                    case DialogResult.Yes:
+                        try
+                        {
+                            string query = "update cdn.Operatorzy set Ope_Haslo='xMs3s6HjOEg', Ope_HasloChk='Fm'where Ope_Kod='ADMIN'";
+                            querySQL(query);
+                            MessageBox.Show("Password is empty. Please restart Optima");
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Warning! You must use Optima database configuration.");
+                            throw;
+                        }
+
+                        break;
+                    case DialogResult.No:
+
+                        break;
+                }
+            }
+            else
+            {
+                MessageBox.Show("You did not select database to use ");
+            }
+        }
+        #endregion
+
+        #region Lunch cliconfg x86
+        public void RunCliconfg_x86()
+        {
+            try
+            {
+                var p = new Process();
+                p.StartInfo.FileName = "C:\\Windows\\system32\\cliconfg.exe";
+                p.Start();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error - File not exists");
+                throw;
+            }
+        }
+        #endregion
+
+        #region Lunch cliconfg x64
+        public void RunCliconfg_x64()
+        {
+            try
+            {
+                var p = new Process();
+                p.StartInfo.FileName = "C:\\Windows\\SysWow64\\cliconfg.exe";
+                p.Start();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error - File not exists");
+                throw;
+            }
+        }
+        #endregion
+
+        #region Run SQL Server Configuration Manager
+        public void LunchSqlConfigurationManager()
+        {
+            try
+            {
+                var p = new Process();
+                p.StartInfo.FileName = "SQLServerManager12.msc";
+                //MessageBox.Show("Pracujesz na wersji SQL 2014");
+                p.Start();
+            }
+            catch
+            {
+                try
+                {
+                    var p = new Process();
+                    p.StartInfo.FileName = "SQLServerManager10.msc";
+                    //MessageBox.Show("Pracujesz na wersji SQL 2008");
+                    p.Start();
+                }
+                catch
+                {
+                    try
+                    {
+                        var p = new Process();
+                        p.StartInfo.FileName = "SQLServerManager14.msc";
+                        //MessageBox.Show("Pracujesz na wersji SQL 2017");
+                        p.Start();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Pracujesz na wersji SQL nie wiadomo jakiej lub nie masz zainstalowanego serwera MS SQL");
+
+                    }
+                }
+
+            }
+        }
+        #endregion
+
+
     }
-    #endregion
+
+
+
+
+
 }
