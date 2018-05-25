@@ -228,43 +228,85 @@ namespace SQLTool.Klasy
         #region Run SQL Server Configuration Manager
         public void LunchSqlConfigurationManager()
         {
+
+            int ver = 0; // wersja sql
+            var p = new Process();
             try
             {
-                var p = new Process();
                 p.StartInfo.FileName = "SQLServerManager12.msc";
-                //MessageBox.Show("Pracujesz na wersji SQL 2014");
+                ver = 12;
                 p.Start();
             }
             catch
             {
                 try
                 {
-                    var p = new Process();
                     p.StartInfo.FileName = "SQLServerManager10.msc";
-                    //MessageBox.Show("Pracujesz na wersji SQL 2008");
+                    ver = 10;                    
                     p.Start();
                 }
                 catch
                 {
                     try
                     {
-                        var p = new Process();
                         p.StartInfo.FileName = "SQLServerManager14.msc";
-                        //MessageBox.Show("Pracujesz na wersji SQL 2017");
+                        ver = 14;
                         p.Start();
                     }
                     catch
                     {
-                        MessageBox.Show("Pracujesz na wersji SQL nie wiadomo jakiej lub nie masz zainstalowanego serwera MS SQL");
-
+                        try
+                        {                          
+                            p.StartInfo.FileName = "SQLServerManager11.msc";
+                            ver = 11;
+                            p.Start();
+                        }
+                        catch
+                        {
+                            try
+                            {
+                                p.StartInfo.FileName = "SQLServerManager13.msc";
+                                ver = 11;
+                                p.Start();
+                            }
+                            catch
+                            {
+                                //MessageBox.Show("Pracujesz na wersji SQL nie wiadomo jakiej lub nie masz zainstalowanego serwera MS SQL");
+                            }
+                        }
                     }
                 }
 
             }
+           // /*
+            switch (ver)
+            {
+                case 10:
+                    MessageBox.Show("Pracujesz na wersji SQL 2008");
+                    break;
+                case 11:
+                    MessageBox.Show("Pracujesz na wersji SQL 2012");
+                    break;
+                case 12:
+                    MessageBox.Show("Pracujesz na wersji SQL 2014");
+                    break;
+                case 13:
+                    MessageBox.Show("Pracujesz na wersji SQL 2016");
+                    break;
+                case 14:
+                    MessageBox.Show("Pracujesz na wersji SQL 2017");
+                    break;
+                default:
+                    MessageBox.Show("Pracujesz na wersji SQL 2017");
+                    break;
+
+
+            }
+
+         //    */
         }
         #endregion
-
-
+        
     }
 
 
