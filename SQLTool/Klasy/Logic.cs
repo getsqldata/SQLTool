@@ -97,7 +97,6 @@ namespace SQLTool.Klasy
                             serverInstance.Add(row[0] + "\\" + row[1]);
                         }
                     }
-
                 }
 
                 return serverInstance;
@@ -106,9 +105,7 @@ namespace SQLTool.Klasy
             {
                 MessageBox.Show("Error");
                 throw;
-            }
-           
-
+            }           
         }
         #endregion
 
