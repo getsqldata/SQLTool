@@ -42,9 +42,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.label6 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -58,9 +56,9 @@
             // button1
             // 
             this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(47, 42);
+            this.button1.Location = new System.Drawing.Point(12, 7);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 41);
+            this.button1.Size = new System.Drawing.Size(193, 87);
             this.button1.TabIndex = 0;
             this.button1.Text = "SQL Query";
             this.button1.UseVisualStyleBackColor = true;
@@ -69,9 +67,9 @@
             // button2
             // 
             this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(47, 89);
+            this.button2.Location = new System.Drawing.Point(12, 98);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(115, 41);
+            this.button2.Size = new System.Drawing.Size(193, 87);
             this.button2.TabIndex = 1;
             this.button2.Text = "Backup SQL";
             this.button2.UseVisualStyleBackColor = true;
@@ -79,7 +77,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(53, 160);
+            this.button3.Location = new System.Drawing.Point(21, 160);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(297, 23);
             this.button3.TabIndex = 7;
@@ -90,7 +88,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(52, 19);
+            this.label1.Location = new System.Drawing.Point(20, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 13);
             this.label1.TabIndex = 3;
@@ -99,7 +97,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(52, 103);
+            this.label2.Location = new System.Drawing.Point(20, 103);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 4;
@@ -108,7 +106,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(52, 138);
+            this.label3.Location = new System.Drawing.Point(20, 138);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 5;
@@ -118,7 +116,7 @@
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(53, 68);
+            this.radioButton1.Location = new System.Drawing.Point(21, 68);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(140, 17);
             this.radioButton1.TabIndex = 3;
@@ -130,7 +128,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(199, 68);
+            this.radioButton2.Location = new System.Drawing.Point(167, 68);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(151, 17);
             this.radioButton2.TabIndex = 4;
@@ -140,7 +138,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(146, 100);
+            this.textBox2.Location = new System.Drawing.Point(114, 100);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(204, 20);
@@ -148,7 +146,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(146, 135);
+            this.textBox3.Location = new System.Drawing.Point(114, 135);
             this.textBox3.Name = "textBox3";
             this.textBox3.PasswordChar = '*';
             this.textBox3.ReadOnly = true;
@@ -158,7 +156,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(146, 189);
+            this.comboBox1.Location = new System.Drawing.Point(114, 189);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(204, 21);
             this.comboBox1.TabIndex = 8;
@@ -175,27 +173,16 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(47, 136);
+            this.button4.Location = new System.Drawing.Point(12, 189);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(115, 41);
+            this.button4.Size = new System.Drawing.Size(193, 87);
             this.button4.TabIndex = 12;
             this.button4.Text = "Optima Tools";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(47, 183);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(115, 41);
-            this.button5.TabIndex = 12;
-            this.button5.Text = "About";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Visible = false;
-            // 
             // splitContainer1
             // 
-            this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer1.ForeColor = System.Drawing.SystemColors.InfoText;
@@ -206,11 +193,12 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.White;
-            this.splitContainer1.Panel1.Controls.Add(this.label6);
+            this.splitContainer1.Panel1.CausesValidation = false;
             this.splitContainer1.Panel1.Controls.Add(this.button1);
-            this.splitContainer1.Panel1.Controls.Add(this.button5);
-            this.splitContainer1.Panel1.Controls.Add(this.button2);
             this.splitContainer1.Panel1.Controls.Add(this.button4);
+            this.splitContainer1.Panel1.Controls.Add(this.button2);
+            this.splitContainer1.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
             this.splitContainer1.Panel1MinSize = 40;
             // 
             // splitContainer1.Panel2
@@ -229,25 +217,17 @@
             this.splitContainer1.Panel2.Controls.Add(this.textBox2);
             this.splitContainer1.Panel2.Controls.Add(this.radioButton1);
             this.splitContainer1.Panel2.Controls.Add(this.radioButton2);
+            this.splitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
-            this.splitContainer1.Size = new System.Drawing.Size(590, 301);
+            this.splitContainer1.Size = new System.Drawing.Size(562, 285);
             this.splitContainer1.SplitterDistance = 220;
             this.splitContainer1.SplitterWidth = 2;
             this.splitContainer1.TabIndex = 13;
             this.splitContainer1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer1_SplitterMoved);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(60, 249);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 13);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "By Michał Cedro";
-            // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(55, 223);
+            this.button7.Location = new System.Drawing.Point(23, 223);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(295, 53);
             this.button7.TabIndex = 9;
@@ -257,7 +237,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(53, 39);
+            this.button6.Location = new System.Drawing.Point(21, 39);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(297, 23);
             this.button6.TabIndex = 2;
@@ -268,7 +248,7 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(146, 14);
+            this.comboBox2.Location = new System.Drawing.Point(114, 14);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(201, 21);
             this.comboBox2.TabIndex = 1;
@@ -278,7 +258,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(52, 192);
+            this.label5.Location = new System.Drawing.Point(20, 192);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 13);
             this.label5.TabIndex = 5;
@@ -288,19 +268,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(590, 301);
+            this.ClientSize = new System.Drawing.Size(562, 285);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.label4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "SQL Quick Tools";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -325,13 +303,11 @@
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Button button6;
         public System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Label label6;
     }
 }
 

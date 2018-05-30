@@ -104,6 +104,7 @@
             this.Name = "OptimaAddons";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "OptimaAddons";
+            this.Load += new System.EventHandler(this.OptimaAddons_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

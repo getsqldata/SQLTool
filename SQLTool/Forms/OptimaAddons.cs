@@ -31,5 +31,10 @@ namespace SQLTool.Forms
         {
             logic.ResetPassOptima();   
         }
+
+        private void OptimaAddons_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

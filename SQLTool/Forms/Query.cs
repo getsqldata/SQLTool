@@ -37,7 +37,12 @@ namespace SQLTool
 
         private void Query_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            Hide();
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
